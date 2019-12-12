@@ -1,4 +1,4 @@
-#!C:\Users\User\PycharmProjects\Service-Market-bot\venv\Scripts\python.exe
+#!C:\Users\User\Desktop\Maslooking-Bot\Insta_bot\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==40.8.0','console_scripts','easy_install-3.6'
 __requires__ = 'setuptools==40.8.0'
 import re

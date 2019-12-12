@@ -265,7 +265,7 @@ async def start(message):
     if not await UsersDbManager.user_exist(tel_id, loop):
         if lang is not 'ru' and lang is not 'uk' and lang is not 'en':
             lang = 'ru'
-        await UsersDbManager.add_user(tel_id, message.from_user.username, lang, loop)
+        await UsersDbManager.add_user(tel_id, '0', lang, loop)
         await ActionsDbManager.add('new_user', datetime.datetime.now(), loop)
 
     user = await UsersDbManager.get_user(tel_id, loop)
@@ -1635,6 +1635,8 @@ async def specify_spare_part(call):
         text = msg.finded_ukr.format(len(items_in_category))
     else:
         text = msg.finded_en.format(len(items_in_category))
+
+    await UsersDbManager.update_context(tel_id, '0', loop)
 
     try:
         await bot.edit_message_text(text, tel_id, call.message.message_id, reply_markup=keyboard)
